@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: nginx
+  labels:
+    app: nginx
+    camada: front-end
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      creationTimestamp:      
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: dockercloud/hello-world 
+        ports:
+        - containerPort: 80
+        resources: {}
+  strategy: {} 
+status: {}
